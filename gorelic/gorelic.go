@@ -14,7 +14,7 @@ var agent *gorelic.Agent
 // Gorelic returns a middleware function that attaches a gorelic agent
 func Handler() echo.MiddlewareFunc {
 	return func(h echo.HandlerFunc) echo.HandlerFunc {
-		return func(c *echo.Context) error {
+		return func(c echo.Context) error {
 			startTime := time.Now()
 			err := h(c)
 
